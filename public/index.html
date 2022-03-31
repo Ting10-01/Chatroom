@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"> </script> -->
+    <link href="css/index.css" rel="stylesheet">
+    <title>RUNNING</title>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+</head>
+
+<body>
+    <div style="background-image: url('ins.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+        <div class="settings">
+            <a class="btn btn-outline-light" id="logout-btn" style="width:100%; height:10%" href="signin.html">Logout</a>
+            <button type="button" class="btn btn-outline-light" id="new_room" style="width:100%; height:10%" data-toggle="modal" data-target="#createRoom">+</button>
+        </div>
+        <div class="left">
+            <div class="self">
+                <p id="user"></p>
+            </div>
+            <div class="others" id="others">
+                <ul class="nav"></ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="target" id="target">
+                <button type="button" class="btn btn-outline-light" id="add_friend" style="width:10%; height:100%;" data-toggle="modal" data-target="#addFriends">+</button>
+            </div>
+            <div class="room" id="chatroom">
+
+            </div>
+            <div class="textarea">
+                <textarea id="comment" style="width: 85%; height: 100%; resize:none; border-color: bisque; border-width: 5px;"></textarea>
+                <button class="btn btn-outline-light" id="send" style="width: 15%; height: 100%;">Send</button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="createRoom" role="dialog">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #BEC9FF;">
+                        <h4 class="modal-title">Create Chatroom</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="groupname" class="form-control" placeholder="Group Name" required autofocus>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="create" class="btn btn-outline-info">Create!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="addFriends" role="dialog">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #BEC9FF;">
+                        <h4 class="modal-title">Add New Friend</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="friendemail" class="form-control" placeholder="Friend's Email" required autofocus>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="add" class="btn btn-outline-info">Add!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/config.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
